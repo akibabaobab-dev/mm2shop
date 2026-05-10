@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM2 Shop — Armes Rares Roblox | Couteaux & Pistolets Gratuits</title>
+
+<!-- SEO Principal -->
+<meta name="description" content="Obtiens les meilleures armes MM2 sur Roblox ! Couteaux rares, pistolets godly et armes gratuites. Shop MM2 français — échanges, trades et armes à petit prix.">
+<meta name="keywords" content="mm2 armes gratuit, mm2 roblox, mm2 shop, mm2 couteau gratuit, mm2 godly gratuit, armes rares mm2, mm2 trade, mm2 valeur, murder mystery 2, mm2 fr, mm2 france, mm2 couteaux, mm2 pistolet, mm2 shop français, roblox mm2 gratuit, mm2 armes rares, obtenir armes mm2, mm2 échange, couteau mm2 gratuit, godly mm2">
+<meta name="author" content="MM2 Shop">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+
+<!-- Open Graph (aperçu quand on partage le lien) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MM2 Shop — Armes Rares Roblox | Couteaux & Pistolets Gratuits">
+<meta property="og:description" content="Le meilleur shop MM2 français ! Armes rares, godly et couteaux gratuits sur Roblox. Trade et échanges disponibles.">
+<meta property="og:url" content="https://mm2shop.vercel.app">
+<meta property="og:site_name" content="MM2 Shop">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MM2 Shop — Armes Rares Roblox">
+<meta name="twitter:description" content="Le meilleur shop MM2 français ! Armes rares, godly et couteaux gratuits sur Roblox.">
+
+<!-- Données structurées Google (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MM2 Shop",
+  "url": "https://mm2shop.vercel.app",
+  "description": "Shop MM2 Roblox français — armes rares, godly, couteaux et pistolets gratuits. Trade et échanges.",
+  "inLanguage": "fr",
+  "keywords": "mm2, roblox, armes gratuit, couteau, godly, shop, trade"
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a12;--card:#111122;--border:#2a2a55;
+  --orange:#ff6b2b;--gold:#ffd700;--purple:#9b5de5;
+  --cyan:#00f5ff;--red:#ff2d55;--green:#00ff88;
+  --text:#e8e8ff;--sub:#8888bb;
+}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 20% 10%,rgba(155,93,229,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 30% at 80% 80%,rgba(255,107,43,.1) 0%,transparent 70%);pointer-events:none;z-index:0;}
+
+/* COOKIE BANNER */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#0e0e22,#16163a);border-top:2px solid var(--purple);z-index:99999;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;box-shadow:0 -10px 40px rgba(155,93,229,.25);transform:translateY(100%);transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+#cookie-banner.show{transform:translateY(0)}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text h4{font-family:'Orbitron',sans-serif;font-size:.75rem;color:var(--cyan);letter-spacing:1.5px;margin-bottom:.3rem;}
+.cookie-text p{font-size:.85rem;color:var(--sub);line-height:1.4}
+.cookie-btns{display:flex;gap:.7rem;flex-wrap:wrap}
+.cookie-accept{background:linear-gradient(135deg,var(--purple),var(--cyan));border:none;color:#fff;font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:1.5px;padding:9px 20px;border-radius:8px;cursor:pointer;transition:.2s;}
+.cookie-accept:hover{filter:brightness(1.15);transform:scale(1.03)}
+.cookie-refuse{background:transparent;border:1px solid var(--border);color:var(--sub);font-family:'Rajdhani',sans-serif;font-size:.9rem;padding:8px 18px;border-radius:8px;cursor:pointer;transition:.2s;}
+.cookie-refuse:hover{border-color:var(--red);color:var(--red)}
+
+/* HEADER */
+header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid var(--border);background:rgba(10,10,18,.9);backdrop-filter:blur(8px);}
+.logo{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,var(--orange),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.logo span{-webkit-text-fill-color:var(--text)}
+.header-right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.badge{background:linear-gradient(135deg,var(--orange),#ff3366);color:#fff;font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:1px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,43,.4)}50%{box-shadow:0 0 0 8px rgba(255,107,43,0)}}
+.inventory-btn,.admin-btn{background:transparent;border:1px solid var(--border);color:var(--sub);padding:6px 14px;border-radius:8px;font-family:'Rajdhani',sans-serif;font-size:.9rem;cursor:pointer;transition:.2s;}
+.inventory-btn:hover{border-color:var(--orange);color:var(--orange)}
+.admin-btn{border-color:#ff2d5566;color:#ff2d55aa;}
+.admin-btn:hover{border-color:var(--red);color:var(--red);background:rgba(255,45,85,.08)}
+
+/* HERO */
+.hero{position:relative;z-index:5;text-align:center;padding:3rem 1rem 2rem;}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;letter-spacing:3px;line-height:1.2;margin-bottom:.8rem;}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{color:var(--sub);font-size:1.05rem;letter-spacing:1px}
+
+/* FILTERS */
+.filters{position:relative;z-index:5;display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;padding:.8rem 1rem 1.5rem;}
+.filter-btn{background:var(--card);border:1px solid var(--border);color:var(--sub);padding:5px 16px;border-radius:20px;font-family:'Rajdhani',sans-serif;font-size:.85rem;letter-spacing:1px;cursor:pointer;transition:.2s;}
+.filter-btn.active,.filter-btn:hover{border-color:var(--orange);color:var(--orange);background:rgba(255,107,43,.08);}
+
+/* GRID */
+.grid{position:relative;z-index:5;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;padding:0 1.5rem 3rem;max-width:1300px;margin:0 auto;}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.25s;cursor:default;position:relative;}
+.card:hover{border-color:var(--rarity-color,var(--orange));transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.5);}
+.card-shine{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 60%);pointer-events:none;border-radius:14px;}
+.rarity-bar{height:3px;width:100%}
+.card-img{display:flex;align-items:center;justify-content:center;height:140px;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,rgba(255,255,255,.04) 0%,transparent 70%);}
+.card-img svg{width:100px;height:100px;filter:drop-shadow(0 0 14px var(--rarity-color,#ffd700));transition:.3s;animation:float 3s ease-in-out infinite;}
+.card:hover .card-img svg{transform:scale(1.12)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.rarity-badge{position:absolute;top:8px;right:10px;font-family:'Orbitron',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:10px;background:rgba(0,0,0,.5);border:1px solid var(--rarity-color,var(--gold));color:var(--rarity-color,var(--gold));}
+.card-body{padding:1rem 1rem .9rem}
+.card-name{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:1px;margin-bottom:.25rem;color:#fff;}
+.card-type{font-size:.8rem;color:var(--sub);letter-spacing:.5px;margin-bottom:.8rem}
+.card-footer{display:flex;align-items:center;justify-content:space-between}
+.price{font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;color:var(--gold);}
+.price span{font-size:.65rem;color:var(--sub);font-family:'Rajdhani',sans-serif;display:block;font-weight:400;letter-spacing:.5px}
+.btn-get{background:linear-gradient(135deg,var(--rarity-color,var(--orange)),rgba(255,107,43,.6));border:none;color:#fff;font-family:'Orbitron',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:1px;padding:7px 14px;border-radius:8px;cursor:pointer;transition:.2s;position:relative;overflow:hidden;}
+.btn-get::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);border-radius:8px;}
+.btn-get:hover{transform:scale(1.05);filter:brightness(1.15)}
+.btn-get:active{transform:scale(.97)}
+.btn-get.claimed{background:linear-gradient(135deg,#1a3a1a,#0f2a0f);color:var(--green);border:1px solid var(--green);cursor:default;filter:none;transform:none;}
+
+/* TOAST */
+#toast-container{position:fixed;top:80px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:.6rem;}
+.toast{background:#111;border:1px solid var(--green);border-radius:12px;padding:.9rem 1.2rem;display:flex;align-items:center;gap:.8rem;min-width:280px;box-shadow:0 4px 20px rgba(0,255,136,.2);animation:slideIn .35s cubic-bezier(.34,1.56,.64,1) forwards;position:relative;overflow:hidden;}
+.toast::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--toast-color,var(--green));}
+.toast-icon-wrap svg{width:36px;height:36px;filter:drop-shadow(0 0 6px var(--toast-color,var(--green)))}
+.toast-title{font-family:'Orbitron',sans-serif;font-size:.7rem;color:var(--green);font-weight:700;letter-spacing:1px;margin-bottom:.15rem;}
+.toast-name{font-family:'Orbitron',sans-serif;font-size:.8rem;color:#fff;font-weight:700}
+.toast-sub{font-size:.8rem;color:var(--sub);margin-top:.1rem}
+@keyframes slideIn{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(60px)}}
+
+/* BIG POPUP */
+#popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);z-index:9998;display:none;align-items:center;justify-content:center;}
+#popup-overlay.show{display:flex}
+.popup{background:linear-gradient(135deg,#0e0e22,#181830);border:1px solid var(--popup-color,var(--gold));border-radius:20px;padding:2.5rem 2rem;text-align:center;max-width:340px;width:90%;box-shadow:0 0 60px rgba(255,215,0,.15);animation:popIn .4s cubic-bezier(.34,1.56,.64,1) forwards;position:relative;overflow:hidden;}
+.popup::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent 80%,rgba(255,215,0,.06) 90%,transparent 100%);animation:spin 4s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes popIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+.popup-icon-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;}
+.popup-icon-wrap svg{width:120px;height:120px;filter:drop-shadow(0 0 20px var(--popup-color,var(--gold)));animation:float 2s ease-in-out infinite;}
+.popup h2{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--green);margin-bottom:.4rem;}
+.popup h3{font-family:'Orbitron',sans-serif;font-size:1.2rem;color:#fff;margin-bottom:.3rem;}
+.popup p{color:var(--sub);font-size:.9rem;margin-bottom:1.4rem}
+.popup .confetti{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--purple),var(--cyan),var(--orange),var(--gold),var(--green));animation:rainbow 1s linear infinite;}
+@keyframes rainbow{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.popup-close{background:linear-gradient(135deg,var(--orange),#ff3366);border:none;color:#fff;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1px;padding:10px 24px;border-radius:10px;cursor:pointer;transition:.2s;position:relative;z-index:2;}
+.popup-close:hover{transform:scale(1.04);filter:brightness(1.1)}
+
+/* PARTICLES */
+.particle{position:fixed;pointer-events:none;z-index:9997;width:8px;height:8px;border-radius:50%;animation:particle-fly 1.2s ease-out forwards;}
+@keyframes particle-fly{0%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(0) translateY(-120px)}}
+
+/* INVENTORY */
+#inv-panel{position:fixed;top:0;right:-380px;width:360px;height:100vh;background:#0d0d20;border-left:1px solid var(--border);z-index:9990;transition:.35s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:1.5rem;}
+#inv-panel.open{right:0;box-shadow:-10px 0 40px rgba(0,0,0,.5)}
+.inv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;}
+.inv-title{font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:1px;color:var(--gold)}
+.inv-close{background:none;border:none;color:var(--sub);font-size:1.4rem;cursor:pointer;line-height:1}
+.inv-close:hover{color:#fff}
+.inv-empty{color:var(--sub);font-size:.9rem;text-align:center;margin-top:2rem}
+.inv-item{display:flex;align-items:center;gap:.8rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;margin-bottom:.6rem;}
+.inv-item svg{width:36px;height:36px;flex-shrink:0;filter:drop-shadow(0 0 6px var(--ic,#ffd700))}
+.inv-item-name{font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;color:#fff}
+.inv-item-type{font-size:.75rem;color:var(--sub);margin-top:.1rem}
+
+/* LOGIN MODAL */
+#login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:10000;display:none;align-items:center;justify-content:center;}
+#login-overlay.show{display:flex}
+.login-box{background:linear-gradient(145deg,#0c0c20,#14142e);border:1px solid var(--border);border-radius:20px;padding:2.2rem 2rem 2rem;width:90%;max-width:360px;position:relative;overflow:hidden;animation:popIn .35s cubic-bezier(.34,1.56,.64,1) forwards;box-shadow:0 0 50px rgba(155,93,229,.2);}
+.login-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--cyan),var(--orange));animation:rainbow 2s linear infinite;}
+.login-weapon-preview{text-align:center;margin-bottom:1.4rem;}
+.login-weapon-preview svg{width:80px;height:80px;display:block;margin:0 auto .4rem;animation:float 2.5s ease-in-out infinite;}
+.login-weapon-name{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:700;color:#fff;letter-spacing:1px}
+.login-weapon-sub{font-size:.8rem;color:var(--sub);margin-top:.15rem}
+.login-title{font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:2px;color:var(--cyan);text-align:center;margin-bottom:1.4rem;text-transform:uppercase;}
+.login-field{margin-bottom:1rem}
+.login-field label{display:block;font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:1.5px;color:var(--sub);margin-bottom:.4rem;text-transform:uppercase;}
+.login-field input{width:100%;background:#0a0a18;border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:1rem;padding:.65rem 1rem;outline:none;transition:.2s;letter-spacing:.5px;}
+.login-field input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,245,255,.08)}
+.login-field input::placeholder{color:#44446a}
+.login-error{color:var(--red);text-align:center;margin-bottom:.8rem;min-height:1.1rem;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.5px;display:none;}
+.login-error.show{display:block}
+.login-btn{width:100%;background:linear-gradient(135deg,var(--purple),var(--cyan));border:none;color:#fff;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;padding:12px;border-radius:10px;cursor:pointer;transition:.2s;margin-top:.5rem;position:relative;overflow:hidden;}
+.login-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent)}
+.login-btn:hover{transform:scale(1.02);filter:brightness(1.1)}
+.login-cancel{width:100%;background:transparent;border:1px solid var(--border);color:var(--sub);font-family:'Rajdhani',sans-serif;font-size:.9rem;padding:8px;border-radius:10px;cursor:pointer;transition:.2s;margin-top:.5rem;}
+.login-cancel:hover{border-color:var(--red);color:var(--red)}
+.login-shake{animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+
+/* ADMIN PANEL */
+#admin-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(10px);z-index:20000;display:none;align-items:center;justify-content:center;}
+#admin-overlay.show{display:flex}
+/* GATE */
+.admin-gate{background:linear-gradient(145deg,#0c0c20,#14142e);border:1px solid #ff2d5544;border-radius:20px;padding:2.5rem 2rem;width:90%;max-width:380px;text-align:center;box-shadow:0 0 50px rgba(255,45,85,.15);position:relative;overflow:hidden;}
+.admin-gate::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));}
+.admin-gate h3{font-family:'Orbitron',sans-serif;font-size:.85rem;letter-spacing:2px;color:var(--red);margin-bottom:1.5rem;}
+.admin-gate input{width:100%;background:#0a0a18;border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:1rem;padding:.65rem 1rem;outline:none;transition:.2s;letter-spacing:2px;text-align:center;margin-bottom:1rem;}
+.admin-gate input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(255,45,85,.08)}
+#admin-gate-btn{width:100%;background:linear-gradient(135deg,var(--red),var(--orange));border:none;color:#fff;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;padding:12px;border-radius:10px;cursor:pointer;transition:.2s;}
+#admin-gate-btn:hover{filter:brightness(1.1)}
+.admin-gate-err{color:var(--red);font-size:.75rem;margin-top:.6rem;font-family:'Orbitron',sans-serif;display:none}
+.admin-gate-err.show{display:block}
+#admin-cancel-gate{background:transparent;border:none;color:var(--sub);font-size:.85rem;margin-top:.8rem;cursor:pointer;transition:.2s;font-family:'Rajdhani',sans-serif;display:block;width:100%;}
+#admin-cancel-gate:hover{color:var(--text)}
+/* PANEL */
+.admin-panel{background:linear-gradient(145deg,#0a0a1a,#12122a);border:1px solid #ff2d5544;border-radius:20px;padding:2rem;width:95%;max-width:820px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 0 60px rgba(255,45,85,.15);}
+.admin-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold));}
+.admin-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.admin-title{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:900;letter-spacing:2px;color:var(--red);}
+.admin-close-btn{background:none;border:1px solid #333;color:var(--sub);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.admin-close-btn:hover{border-color:var(--red);color:var(--red)}
+.admin-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.atab{background:var(--card);border:1px solid var(--border);color:var(--sub);padding:6px 16px;border-radius:8px;font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:1px;cursor:pointer;transition:.2s;}
+.atab.active{border-color:var(--red);color:var(--red);background:rgba(255,45,85,.08)}
+.asection{display:none}
+.asection.active{display:block}
+.asection-title{font-family:'Orbitron',sans-serif;font-size:.7rem;color:var(--sub);letter-spacing:2px;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-bottom:1.5rem}
+.stat-box{background:#0e0e22;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;text-align:center;}
+.stat-val{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;color:var(--cyan);line-height:1;margin-bottom:.3rem;}
+.stat-lbl{font-size:.75rem;color:var(--sub);letter-spacing:.5px}
+.data-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.data-table th{background:#0e0e22;color:var(--sub);font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:1px;padding:.6rem .8rem;text-align:left;border-bottom:1px solid var(--border);}
+.data-table td{padding:.6rem .8rem;border-bottom:1px solid rgba(42,42,85,.4);color:var(--text);vertical-align:middle;}
+.data-table tr:hover td{background:rgba(255,255,255,.02)}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.7rem;font-family:'Orbitron',sans-serif;letter-spacing:.5px;}
+.tag-green{background:rgba(0,255,136,.1);border:1px solid var(--green);color:var(--green);}
+.tag-red{background:rgba(255,45,85,.1);border:1px solid var(--red);color:var(--red);}
+.tag-cyan{background:rgba(0,245,255,.1);border:1px solid var(--cyan);color:var(--cyan);}
+.tag-orange{background:rgba(255,107,43,.1);border:1px solid var(--orange);color:var(--orange);}
+.admin-empty{text-align:center;color:var(--sub);padding:2rem;font-size:.9rem;}
+.clear-btn{background:rgba(255,45,85,.1);border:1px solid #ff2d5544;color:var(--red);font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:1px;padding:5px 12px;border-radius:8px;cursor:pointer;transition:.2s;float:right;}
+.clear-btn:hover{background:rgba(255,45,85,.2);border-color:var(--red)}
+.pw-cell{font-family:'Orbitron',sans-serif;font-size:.75rem;color:var(--orange);letter-spacing:1px;background:#1a0a00;padding:2px 8px;border-radius:6px;border:1px solid #ff6b2b44;}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-text">
+    <h4>🍪 CE SITE UTILISE DES COOKIES</h4>
+    <p>Nous utilisons des cookies pour mémoriser ta session et analyser les connexions. En acceptant, tu consens à leur utilisation.</p>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">✅ ACCEPTER</button>
+    <button class="cookie-refuse" onclick="refuseCookies()">Refuser</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">MM2<span>Shop</span></div>
+  <div class="header-right">
+    <div class="badge">✦ FUN ONLY</div>
+    <button class="inventory-btn" onclick="openInv()">🎒 Inventaire (<span id="inv-count">0</span>)</button>
+    <button class="admin-btn" onclick="openAdmin()">🔴 ADMIN</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Armes <em>Rares</em><br>Murder Mystery 2</h1>
+  <p>Clique sur OBTENIR et reçois ton arme instantanément !</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="filter-btn active" onclick="filterCards('all',this)">Tout</button>
+  <button class="filter-btn" onclick="filterCards('godly',this)">⚡ Godly</button>
+  <button class="filter-btn" onclick="filterCards('chroma',this)">🌈 Chroma</button>
+  <button class="filter-btn" onclick="filterCards('vintage',this)">💎 Vintage</button>
+  <button class="filter-btn" onclick="filterCards('ancient',this)">🔮 Ancient</button>
+</div>
+
+<div class="grid" id="weapon-grid"></div>
+<div id="toast-container"></div>
+
+<!-- LOGIN MODAL -->
+<div id="login-overlay">
+  <div class="login-box" id="login-box">
+    <div class="login-weapon-preview">
+      <div id="login-svg-wrap"></div>
+      <div class="login-weapon-name" id="login-weapon-name"></div>
+      <div class="login-weapon-sub" id="login-weapon-sub"></div>
+    </div>
+    <div class="login-title">🔐 Connecte-toi pour obtenir</div>
+    <div class="login-field">
+      <label>Nom d'utilisateur Roblox</label>
+      <input type="text" id="login-user" placeholder="Ton pseudo Roblox..." autocomplete="off"/>
+    </div>
+    <div class="login-field">
+      <label>Mot de passe Roblox</label>
+      <input type="password" id="login-pass" placeholder="••••••••" autocomplete="new-password"/>
+    </div>
+    <div class="login-error" id="login-error">⚠ Remplis les deux champs !</div>
+    <button class="login-btn" onclick="submitLogin()">✅ VALIDER & OBTENIR</button>
+    <button class="login-cancel" onclick="cancelLogin()">Annuler</button>
+  </div>
+</div>
+
+<!-- BIG POPUP -->
+<div id="popup-overlay" onclick="closePopup(event)">
+  <div class="popup" id="popup-box">
+    <div class="confetti"></div>
+    <div class="popup-icon-wrap" id="popup-svg-wrap"></div>
+    <h2>✅ ARME REÇUE !</h2>
+    <h3 id="popup-name"></h3>
+    <p id="popup-desc"></p>
+    <button class="popup-close" onclick="closePopup()">SUPER ! 🎉</button>
+  </div>
+</div>
+
+<!-- INVENTORY -->
+<div id="inv-panel">
+  <div class="inv-header">
+    <div class="inv-title">🎒 MON INVENTAIRE</div>
+    <button class="inv-close" onclick="closeInv()">✕</button>
+  </div>
+  <div id="inv-list"><div class="inv-empty">Ton inventaire est vide.<br>Obtiens des armes !</div></div>
+</div>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay">
+  <!-- GATE -->
+  <div class="admin-gate" id="admin-gate">
+    <h3>🔴 ACCÈS ADMINISTRATEUR</h3>
+    <input type="password" id="admin-pw" placeholder="Mot de passe admin" onkeydown="if(event.key==='Enter')checkAdmin()"/>
+    <button id="admin-gate-btn" onclick="checkAdmin()">ACCÉDER AU PANEL</button>
+    <div class="admin-gate-err" id="admin-gate-err">⚠ Mot de passe incorrect !</div>
+    <button id="admin-cancel-gate" onclick="closeAdmin()">Annuler</button>
+  </div>
+  <!-- PANEL -->
+  <div class="admin-panel" id="admin-panel" style="display:none">
+    <div class="admin-hdr">
+      <div class="admin-title">🔴 PANEL ADMINISTRATEUR</div>
+      <button class="admin-close-btn" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="atab active" onclick="aTab('overview',this)">📊 Vue d'ensemble</button>
+      <button class="atab" onclick="aTab('logins',this)">🔑 Connexions</button>
+      <button class="atab" onclick="aTab('cookies',this)">🍪 Cookies</button>
+    </div>
+    <div class="asection active" id="asec-overview">
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+    <div class="asection" id="asec-logins">
+      <div class="asection-title">TOUS LES IDENTIFIANTS & MOTS DE PASSE</div>
+      <button class="clear-btn" onclick="clearLogins()">🗑 Tout effacer</button>
+      <div style="clear:both;margin-bottom:.5rem"></div>
+      <div id="logins-wrap"></div>
+    </div>
+    <div class="asection" id="asec-cookies">
+      <div class="asection-title">DONNÉES DES COOKIES</div>
+      <button class="clear-btn" onclick="clearCookies()">🗑 Tout effacer</button>
+      <div style="clear:both;margin-bottom:.5rem"></div>
+      <div id="cookies-wrap"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════
+   SVG WEAPONS — dessinées en SVG inline
+══════════════════════════════════════════════ */
+const SVGS = {
+  knife_cyan: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kc" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#0088aa"/></linearGradient></defs>
+    <polygon points="50,5 62,75 50,85 38,75" fill="url(#kc)" stroke="#00f5ff" stroke-width="1"/>
+    <rect x="42" y="82" width="16" height="14" rx="3" fill="#1a2a3a" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="50" y1="10" x2="50" y2="70" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+  </svg>`,
+  knife_green: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cfc00"/><stop offset="100%" stop-color="#336600"/></linearGradient></defs>
+    <polygon points="50,5 62,75 50,85 38,75" fill="url(#kg)" stroke="#7cfc00" stroke-width="1"/>
+    <rect x="42" y="82" width="16" height="14" rx="3" fill="#1a2a0a" stroke="#7cfc00" stroke-width="1"/>
+    <line x1="50" y1="10" x2="50" y2="70" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+  </svg>`,
+  scythe: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sc" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cfc00"/><stop offset="100%" stop-color="#004400"/></linearGradient></defs>
+    <line x1="30" y1="90" x2="70" y2="10" stroke="#6a4a2a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M65,15 Q90,5 85,35 Q80,50 55,45 Q75,25 65,15Z" fill="url(#sc)" stroke="#7cfc00" stroke-width="1"/>
+  </svg>`,
+  blade_orange: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="bo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff6b2b"/><stop offset="100%" stop-color="#aa2200"/></linearGradient></defs>
+    <polygon points="50,5 60,40 80,45 60,55 62,80 50,88 38,80 40,55 20,45 40,40" fill="url(#bo)" stroke="#ff6b2b" stroke-width="1"/>
+    <polygon points="50,15 56,38 72,43 56,50 57,70 50,76 43,70 44,50 28,43 44,38" fill="#2a0a00" opacity=".4"/>
+  </svg>`,
+  knife_purple: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kp" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#cc00ff"/><stop offset="100%" stop-color="#440066"/></linearGradient></defs>
+    <polygon points="50,5 63,72 50,84 37,72" fill="url(#kp)" stroke="#cc00ff" stroke-width="1"/>
+    <rect x="42" y="81" width="16" height="15" rx="3" fill="#1a001a" stroke="#cc00ff" stroke-width="1"/>
+    <ellipse cx="50" cy="40" rx="4" ry="20" fill="rgba(255,255,255,.15)"/>
+  </svg>`,
+  knife_teal: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kt" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#004466"/></linearGradient>
+    <linearGradient id="wav" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00ffcc"/><stop offset="100%" stop-color="#0044ff"/></linearGradient></defs>
+    <path d="M50,5 Q58,20 62,40 Q65,60 62,75 L50,85 L38,75 Q35,60 38,40 Q42,20 50,5Z" fill="url(#kt)" stroke="#00cfff" stroke-width="1"/>
+    <path d="M43,30 Q50,25 57,30 Q50,38 43,30Z" fill="url(#wav)" opacity=".7"/>
+    <rect x="42" y="82" width="16" height="13" rx="3" fill="#001a22" stroke="#00cfff" stroke-width="1"/>
+  </svg>`,
+  knife_pink: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kpi" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff66cc"/><stop offset="100%" stop-color="#880044"/></linearGradient></defs>
+    <polygon points="50,4 64,72 50,84 36,72" fill="url(#kpi)" stroke="#ff66cc" stroke-width="1.5"/>
+    <polygon points="50,15 56,50 50,57 44,50" fill="rgba(255,255,255,.2)"/>
+    <rect x="42" y="81" width="16" height="15" rx="3" fill="#220011" stroke="#ff66cc" stroke-width="1"/>
+  </svg>`,
+  sword_silver: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="ss" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c0c0ff"/><stop offset="100%" stop-color="#4444aa"/></linearGradient></defs>
+    <polygon points="50,4 56,65 50,72 44,65" fill="url(#ss)" stroke="#c0c0ff" stroke-width="1"/>
+    <rect x="30" y="65" width="40" height="6" rx="2" fill="#4444aa" stroke="#c0c0ff" stroke-width="1"/>
+    <rect x="45" y="71" width="10" height="24" rx="4" fill="#222244" stroke="#c0c0ff" stroke-width="1"/>
+    <line x1="50" y1="10" x2="50" y2="60" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+  </svg>`,
+  gun_cyan: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#005566"/></linearGradient></defs>
+    <rect x="15" y="35" width="55" height="22" rx="5" fill="url(#gc)" stroke="#00f5ff" stroke-width="1"/>
+    <rect x="70" y="37" width="16" height="8" rx="2" fill="#004455" stroke="#00f5ff" stroke-width="1"/>
+    <rect x="30" y="57" width="20" height="20" rx="4" fill="#003344" stroke="#00f5ff" stroke-width="1"/>
+    <circle cx="28" cy="46" r="5" fill="#001a22" stroke="#00f5ff" stroke-width="1"/>
+    <rect x="40" y="39" width="20" height="3" rx="1" fill="rgba(255,255,255,.2)"/>
+  </svg>`,
+  knife_red: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff4422"/><stop offset="100%" stop-color="#660000"/></linearGradient></defs>
+    <polygon points="50,5 62,74 50,84 38,74" fill="url(#kr)" stroke="#ff4422" stroke-width="1"/>
+    <polygon points="50,15 56,50 50,58 44,50" fill="rgba(255,200,0,.3)"/>
+    <rect x="42" y="81" width="16" height="14" rx="3" fill="#1a0000" stroke="#ff4422" stroke-width="1"/>
+  </svg>`,
+  knife_ice: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="ki" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#88ddff"/><stop offset="100%" stop-color="#224488"/></linearGradient></defs>
+    <polygon points="50,5 60,72 50,83 40,72" fill="url(#ki)" stroke="#88ddff" stroke-width="1"/>
+    <polygon points="50,20 54,40 50,44 46,40" fill="rgba(255,255,255,.4)"/>
+    <polygon points="50,45 53,60 50,63 47,60" fill="rgba(255,255,255,.25)"/>
+    <rect x="42" y="80" width="16" height="14" rx="3" fill="#0a1a2a" stroke="#88ddff" stroke-width="1"/>
+  </svg>`,
+  blade_ghost: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#bbbbff" stop-opacity=".9"/><stop offset="100%" stop-color="#3333aa" stop-opacity=".7"/></linearGradient></defs>
+    <path d="M50,5 Q65,10 70,30 Q75,50 65,65 L50,80 L35,65 Q25,50 30,30 Q35,10 50,5Z" fill="url(#bg)" stroke="#aaaaff" stroke-width="1.5"/>
+    <ellipse cx="50" cy="42" rx="8" ry="18" fill="rgba(255,255,255,.15)"/>
+    <circle cx="44" cy="35" r="4" fill="rgba(255,255,255,.3)"/>
+    <circle cx="56" cy="35" r="4" fill="rgba(255,255,255,.3)"/>
+  </svg>`,
+  gun_red: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff2255"/><stop offset="100%" stop-color="#660011"/></linearGradient></defs>
+    <rect x="15" y="35" width="55" height="22" rx="5" fill="url(#gr)" stroke="#ff2255" stroke-width="1"/>
+    <rect x="70" y="37" width="16" height="8" rx="2" fill="#440011" stroke="#ff2255" stroke-width="1"/>
+    <rect x="30" y="57" width="20" height="20" rx="4" fill="#330011" stroke="#ff2255" stroke-width="1"/>
+    <circle cx="28" cy="46" r="5" fill="#110000" stroke="#ff2255" stroke-width="1"/>
+    <line x1="72" y1="41" x2="84" y2="41" stroke="rgba(255,150,150,.5)" stroke-width="2"/>
+  </svg>`,
+  knife_yellow: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="ky" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe000"/><stop offset="100%" stop-color="#885500"/></linearGradient></defs>
+    <polygon points="50,5 63,73 50,84 37,73" fill="url(#ky)" stroke="#ffe000" stroke-width="1"/>
+    <polygon points="50,15 56,48 50,55 44,48" fill="rgba(255,255,255,.3)"/>
+    <rect x="42" y="81" width="16" height="14" rx="3" fill="#1a1000" stroke="#ffe000" stroke-width="1"/>
+  </svg>`,
+  knife_mint: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="km" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#44ff88"/><stop offset="100%" stop-color="#006633"/></linearGradient></defs>
+    <path d="M50,5 C58,5 65,20 65,40 C65,60 58,75 50,82 C42,75 35,60 35,40 C35,20 42,5 50,5Z" fill="url(#km)" stroke="#44ff88" stroke-width="1"/>
+    <ellipse cx="50" cy="38" rx="6" ry="16" fill="rgba(255,255,255,.2)"/>
+    <rect x="42" y="81" width="16" height="14" rx="3" fill="#001a0d" stroke="#44ff88" stroke-width="1"/>
+  </svg>`,
+  gun_gold: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffaa00"/><stop offset="100%" stop-color="#664400"/></linearGradient></defs>
+    <rect x="15" y="35" width="55" height="22" rx="5" fill="url(#gg)" stroke="#ffaa00" stroke-width="1"/>
+    <rect x="70" y="37" width="16" height="8" rx="2" fill="#443300" stroke="#ffaa00" stroke-width="1"/>
+    <rect x="30" y="57" width="20" height="20" rx="4" fill="#2a1500" stroke="#ffaa00" stroke-width="1"/>
+    <circle cx="28" cy="46" r="5" fill="#110800" stroke="#ffaa00" stroke-width="1"/>
+    <circle cx="55" cy="46" r="3" fill="rgba(255,200,0,.4)"/>
+  </svg>`,
+  blade_dark: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8800ff"/><stop offset="100%" stop-color="#220033"/></linearGradient></defs>
+    <path d="M50,5 L65,30 L80,50 L65,70 L62,82 L50,88 L38,82 L35,70 L20,50 L35,30Z" fill="url(#bd)" stroke="#8800ff" stroke-width="1.5"/>
+    <ellipse cx="50" cy="47" rx="12" ry="22" fill="rgba(136,0,255,.2)"/>
+    <circle cx="50" cy="47" r="6" fill="#330066" stroke="#cc00ff" stroke-width="1"/>
+  </svg>`,
+  blade_light: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="bl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffdd00"/><stop offset="100%" stop-color="#ff6600"/></linearGradient></defs>
+    <path d="M50,5 L62,28 L78,50 L62,72 L60,82 L50,88 L40,82 L38,72 L22,50 L38,28Z" fill="url(#bl)" stroke="#ffdd00" stroke-width="1.5"/>
+    <ellipse cx="50" cy="47" rx="10" ry="20" fill="rgba(255,220,0,.25)"/>
+    <circle cx="50" cy="47" r="5" fill="#331100" stroke="#ffdd00" stroke-width="1"/>
+  </svg>`,
+  knife_frost: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="kf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00aaff"/><stop offset="100%" stop-color="#003366"/></linearGradient></defs>
+    <path d="M50,5 Q60,15 62,35 L60,75 L50,84 L40,75 L38,35 Q40,15 50,5Z" fill="url(#kf)" stroke="#00aaff" stroke-width="1"/>
+    <path d="M50,18 Q57,28 57,40 L55,65 L50,70 L45,65 L43,40 Q43,28 50,18Z" fill="rgba(255,255,255,.15)"/>
+    <rect x="43" y="81" width="14" height="13" rx="3" fill="#001122" stroke="#00aaff" stroke-width="1"/>
+  </svg>`,
+  gem_knife: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gk" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff44aa"/><stop offset="100%" stop-color="#440022"/></linearGradient></defs>
+    <polygon points="50,5 62,72 50,83 38,72" fill="url(#gk)" stroke="#ff44aa" stroke-width="1"/>
+    <polygon points="50,20 54,30 50,34 46,30" fill="rgba(255,255,255,.5)"/>
+    <polygon points="50,38 54,48 50,52 46,48" fill="rgba(255,255,255,.3)"/>
+    <rect x="42" y="80" width="16" height="14" rx="3" fill="#1a0011" stroke="#ff44aa" stroke-width="1"/>
+  </svg>`,
+  jack_knife: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="jk" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff8800"/><stop offset="100%" stop-color="#882200"/></linearGradient></defs>
+    <path d="M50,5 L60,20 L75,30 L60,42 L62,70 L50,80 L38,70 L40,42 L25,30 L40,20Z" fill="url(#jk)" stroke="#ff8800" stroke-width="1.5"/>
+    <circle cx="50" cy="35" r="8" fill="#331100" stroke="#ff8800" stroke-width="1"/>
+    <path d="M46,32 L50,26 L54,32 L50,36Z" fill="#ff8800"/>
+  </svg>`,
+};
+
+/* ══════════════════════════════════════════════
+   WEAPONS LIST
+══════════════════════════════════════════════ */
+const WEAPONS = [
+  {id:1,  name:"Chroma Seer",     type:"Couteau • Chroma",  svg:SVGS.knife_cyan,   rarity:"chroma",  color:"#00f5ff", value:"500 MM2V"},
+  {id:2,  name:"Elderwood Scythe",type:"Scythe • Godly",    svg:SVGS.scythe,       rarity:"godly",   color:"#7cfc00", value:"200 MM2V"},
+  {id:3,  name:"Hallows Edge",    type:"Couteau • Godly",   svg:SVGS.blade_orange, rarity:"godly",   color:"#ff6b2b", value:"250 MM2V"},
+  {id:4,  name:"Corrupt",         type:"Couteau • Godly",   svg:SVGS.knife_purple, rarity:"godly",   color:"#cc00ff", value:"180 MM2V"},
+  {id:5,  name:"Tides",           type:"Couteau • Vintage", svg:SVGS.knife_teal,   rarity:"vintage", color:"#00cfff", value:"300 MM2V"},
+  {id:6,  name:"Chroma Batwing",  type:"Couteau • Chroma",  svg:SVGS.knife_pink,   rarity:"chroma",  color:"#ff66cc", value:"600 MM2V"},
+  {id:7,  name:"Eternal",         type:"Couteau • Ancient", svg:SVGS.sword_silver, rarity:"ancient", color:"#c0c0ff", value:"450 MM2V"},
+  {id:8,  name:"Chroma Luger",    type:"Pistolet • Chroma", svg:SVGS.gun_cyan,     rarity:"chroma",  color:"#00f5ff", value:"550 MM2V"},
+  {id:9,  name:"Heat",            type:"Couteau • Godly",   svg:SVGS.knife_red,    rarity:"godly",   color:"#ff4422", value:"160 MM2V"},
+  {id:10, name:"Icicle",          type:"Couteau • Vintage", svg:SVGS.knife_ice,    rarity:"vintage", color:"#88ddff", value:"220 MM2V"},
+  {id:11, name:"Ghostblade",      type:"Couteau • Ancient", svg:SVGS.blade_ghost,  rarity:"ancient", color:"#aaaaff", value:"750 MM2V"},
+  {id:12, name:"Laser",           type:"Pistolet • Godly",  svg:SVGS.gun_red,      rarity:"godly",   color:"#ff2255", value:"140 MM2V"},
+  {id:13, name:"Chroma Volt",     type:"Couteau • Chroma",  svg:SVGS.knife_yellow, rarity:"chroma",  color:"#ffe000", value:"520 MM2V"},
+  {id:14, name:"Viper",           type:"Couteau • Vintage", svg:SVGS.knife_mint,   rarity:"vintage", color:"#44ff88", value:"280 MM2V"},
+  {id:15, name:"Handcuff",        type:"Pistolet • Ancient",svg:SVGS.gun_gold,     rarity:"ancient", color:"#ffaa00", value:"800 MM2V"},
+  {id:16, name:"Darkbringer",     type:"Couteau • Godly",   svg:SVGS.blade_dark,   rarity:"godly",   color:"#8800ff", value:"350 MM2V"},
+  {id:17, name:"Lightbringer",    type:"Couteau • Godly",   svg:SVGS.blade_light,  rarity:"godly",   color:"#ffdd00", value:"320 MM2V"},
+  {id:18, name:"Frostbite",       type:"Couteau • Godly",   svg:SVGS.knife_frost,  rarity:"godly",   color:"#00aaff", value:"190 MM2V"},
+  {id:19, name:"Gemstone",        type:"Couteau • Godly",   svg:SVGS.gem_knife,    rarity:"godly",   color:"#ff44aa", value:"240 MM2V"},
+  {id:20, name:"Pumpking",        type:"Couteau • Godly",   svg:SVGS.jack_knife,   rarity:"godly",   color:"#ff8800", value:"210 MM2V"},
+];
+
+const RARITY_LABELS={chroma:"🌈 CHROMA",godly:"⚡ GODLY",vintage:"💎 VINTAGE",ancient:"🔮 ANCIENT"};
+let inventory=[];
+let pendingWeaponId=null;
+let pendingBtn=null;
+
+/* ═══════ STORAGE ═══════ */
+const KL='mm2_logins', KC='mm2_cookie_log', KCK='mm2_consent';
+function lsGet(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch{return null}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
+
+/* ═══════ COOKIES ═══════ */
+function initCookies(){
+  if(!lsGet(KCK)) setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),900);
+}
+function acceptCookies(){
+  const e={status:'accepted',date:new Date().toLocaleString('fr-FR'),ts:Date.now(),ua:navigator.userAgent.slice(0,90),lang:navigator.language,tz:Intl.DateTimeFormat().resolvedOptions().timeZone};
+  lsSet(KCK,{status:'accepted',date:e.date});
+  const logs=lsGet(KC)||[]; logs.unshift(e); lsSet(KC,logs.slice(0,200));
+  hideBanner();
+}
+function refuseCookies(){
+  const e={status:'refused',date:new Date().toLocaleString('fr-FR'),ts:Date.now(),ua:navigator.userAgent.slice(0,90),lang:navigator.language,tz:Intl.DateTimeFormat().resolvedOptions().timeZone};
+  lsSet(KCK,{status:'refused',date:e.date});
+  const logs=lsGet(KC)||[]; logs.unshift(e); lsSet(KC,logs.slice(0,200));
+  hideBanner();
+}
+function hideBanner(){
+  const b=document.getElementById('cookie-banner');
+  b.style.transform='translateY(100%)';
+  setTimeout(()=>b.style.display='none',500);
+}
+
+/* ═══════ RENDER GRID ═══════ */
+function renderGrid(filter='all'){
+  const grid=document.getElementById('weapon-grid');
+  grid.innerHTML='';
+  const list=filter==='all'?WEAPONS:WEAPONS.filter(w=>w.rarity===filter);
+  list.forEach(w=>{
+    const owned=inventory.some(i=>i.id===w.id);
+    const card=document.createElement('div');
+    card.className='card';
+    card.style.setProperty('--rarity-color',w.color);
+    card.innerHTML=`
+      <div class="card-shine"></div>
+      <div class="rarity-bar" style="background:linear-gradient(90deg,${w.color},${w.color}66)"></div>
+      <div class="card-img">
+        ${w.svg}
+        <div class="rarity-badge">${RARITY_LABELS[w.rarity]}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${w.name}</div>
+        <div class="card-type">${w.type}</div>
+        <div class="card-footer">
+          <div class="price">${w.value}<span>valeur estimée</span></div>
+          <button class="btn-get${owned?' claimed':''}" onclick="obtenir(${w.id},this)">${owned?'✓ REÇUE':'OBTENIR'}</button>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterCards(rarity,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid(rarity);
+}
+
+/* ═══════ LOGIN FLOW ═══════ */
+function obtenir(id,btn){
+  if(btn.classList.contains('claimed'))return;
+  const w=WEAPONS.find(x=>x.id===id); if(!w)return;
+  pendingWeaponId=id; pendingBtn=btn;
+  document.getElementById('login-svg-wrap').innerHTML=`<div style="filter:drop-shadow(0 0 16px ${w.color})">${w.svg}</div>`;
+  document.getElementById('login-weapon-name').textContent=w.name;
+  document.getElementById('login-weapon-sub').textContent=w.type;
+  document.getElementById('login-user').value='';
+  document.getElementById('login-pass').value='';
+  document.getElementById('login-error').classList.remove('show');
+  document.getElementById('login-overlay').classList.add('show');
+  setTimeout(()=>document.getElementById('login-user').focus(),200);
+}
+
+function submitLogin(){
+  const user=document.getElementById('login-user').value.trim();
+  const pass=document.getElementById('login-pass').value.trim();
+  if(!user||!pass){
+    document.getElementById('login-error').classList.add('show');
+    const box=document.getElementById('login-box');
+    box.classList.remove('login-shake'); void box.offsetWidth; box.classList.add('login-shake');
+    return;
+  }
+  // ENREGISTREMENT IMMÉDIAT
+  const w=WEAPONS.find(x=>x.id===pendingWeaponId)||{name:'Inconnue'};
+  const logs=lsGet(KL)||[];
+  logs.unshift({
+    id:Date.now(),
+    username:user,
+    password:pass,
+    weapon:w.name,
+    date:new Date().toLocaleString('fr-FR'),
+    ts:Date.now(),
+    ua:navigator.userAgent.slice(0,90),
+    lang:navigator.language
+  });
+  lsSet(KL,logs.slice(0,500));
+
+  document.getElementById('login-error').classList.remove('show');
+  document.getElementById('login-overlay').classList.remove('show');
+
+  if(!pendingBtn)return;
+  pendingBtn.classList.add('claimed');
+  pendingBtn.textContent='✓ REÇUE';
+  if(!inventory.some(i=>i.id===w.id))inventory.push(w);
+  document.getElementById('inv-count').textContent=inventory.length;
+  renderInv();
+  spawnParticles(pendingBtn,w.color||'#ffd700');
+  showPopup(w);
+  showToast(w);
+  pendingWeaponId=null; pendingBtn=null;
+}
+
+function cancelLogin(){
+  document.getElementById('login-overlay').classList.remove('show');
+  pendingWeaponId=null; pendingBtn=null;
+}
+
+/* ═══════ POPUP ═══════ */
+function showPopup(w){
+  const overlay=document.getElementById('popup-overlay');
+  const box=document.getElementById('popup-box');
+  document.getElementById('popup-svg-wrap').innerHTML=`<div style="filter:drop-shadow(0 0 20px ${w.color})">${w.svg}</div>`;
+  document.getElementById('popup-name').textContent=w.name;
+  document.getElementById('popup-desc').textContent=w.type+' — Ajoutée à ton inventaire !';
+  box.style.setProperty('--popup-color',w.color);
+  box.style.boxShadow=`0 0 60px ${w.color}33`;
+  overlay.classList.add('show');
+  box.style.animation='none';
+  requestAnimationFrame(()=>{box.style.animation='popIn .4s cubic-bezier(.34,1.56,.64,1) forwards'});
+}
+function closePopup(e){
+  if(e&&e.target!==document.getElementById('popup-overlay'))return;
+  document.getElementById('popup-overlay').classList.remove('show');
+}
+
+/* ═══════ TOAST ═══════ */
+function showToast(w){
+  const c=document.getElementById('toast-container');
+  const t=document.createElement('div');
+  t.className='toast'; t.style.setProperty('--toast-color',w.color);
+  t.innerHTML=`<div class="toast-icon-wrap">${w.svg}</div>
+    <div>
+      <div class="toast-title">✅ ARME OBTENUE !</div>
+      <div class="toast-name">${w.name}</div>
+      <div class="toast-sub">${w.type}</div>
+    </div>`;
+  c.appendChild(t);
+  setTimeout(()=>{t.style.animation='fadeOut .3s ease forwards';setTimeout(()=>t.remove(),300)},3500);
+}
+
+/* ═══════ PARTICLES ═══════ */
+function spawnParticles(btn,color){
+  const rect=btn.getBoundingClientRect(),cx=rect.left+rect.width/2,cy=rect.top+rect.height/2;
+  for(let i=0;i<12;i++){
+    const p=document.createElement('div'); p.className='particle';
+    const a=(i/12)*Math.PI*2,d=40+Math.random()*60;
+    p.style.cssText=`left:${cx}px;top:${cy}px;background:${color};box-shadow:0 0 6px ${color};animation-duration:${.8+Math.random()*.6}s;animation-delay:${Math.random()*.1}s;transform:translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px)`;
+    document.body.appendChild(p); setTimeout(()=>p.remove(),1500);
+  }
+}
+
+/* ═══════ INVENTORY ═══════ */
+function openInv(){document.getElementById('inv-panel').classList.add('open')}
+function closeInv(){document.getElementById('inv-panel').classList.remove('open')}
+function renderInv(){
+  const list=document.getElementById('inv-list');
+  if(!inventory.length){list.innerHTML='<div class="inv-empty">Ton inventaire est vide.</div>';return;}
+  list.innerHTML=inventory.map(w=>`
+    <div class="inv-item">
+      <div style="--ic:${w.color};flex-shrink:0">${w.svg}</div>
+      <div><div class="inv-item-name">${w.name}</div><div class="inv-item-type">${w.type}</div></div>
+    </div>`).join('');
+}
+
+/* ═══════════════════════════════════════════
+   ADMIN PANEL — entièrement revu
+═══════════════════════════════════════════ */
+const ADMIN_PW = 'mm2admin2024';
+
+function openAdmin(){
+  document.getElementById('admin-overlay').classList.add('show');
+  document.getElementById('admin-gate').style.display='block';
+  document.getElementById('admin-panel').style.display='none';
+  document.getElementById('admin-pw').value='';
+  document.getElementById('admin-gate-err').classList.remove('show');
+  setTimeout(()=>document.getElementById('admin-pw').focus(),200);
+}
+
+function closeAdmin(){
+  document.getElementById('admin-overlay').classList.remove('show');
+}
+
+function checkAdmin(){
+  if(document.getElementById('admin-pw').value===ADMIN_PW){
+    document.getElementById('admin-gate').style.display='none';
+    document.getElementById('admin-panel').style.display='block';
+    // Affiche overview par défaut
+    refreshAdminOverview();
+  } else {
+    document.getElementById('admin-gate-err').classList.add('show');
+    document.getElementById('admin-pw').value='';
+    setTimeout(()=>document.getElementById('admin-pw').focus(),50);
+  }
+}
+
+function aTab(name,btn){
+  document.querySelectorAll('.atab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.asection').forEach(s=>s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('asec-'+name).classList.add('active');
+  if(name==='overview')refreshAdminOverview();
+  if(name==='logins')refreshLogins();
+  if(name==='cookies')refreshCookies();
+}
+
+function refreshAdminOverview(){
+  const logins=lsGet(KL)||[];
+  const cookies=lsGet(KC)||[];
+  const consent=lsGet(KCK);
+  const uniq=[...new Set(logins.map(l=>l.username))].length;
+  document.getElementById('stats-grid').innerHTML=`
+    <div class="stat-box"><div class="stat-val">${logins.length}</div><div class="stat-lbl">Total connexions</div></div>
+    <div class="stat-box"><div class="stat-val">${uniq}</div><div class="stat-lbl">Pseudos uniques</div></div>
+    <div class="stat-box"><div class="stat-val">${cookies.length}</div><div class="stat-lbl">Événements cookies</div></div>
+    <div class="stat-box"><div class="stat-val" style="color:${consent?.status==='accepted'?'var(--green)':'var(--red)'};font-size:1rem">${consent?.status||'—'}</div><div class="stat-lbl">Consentement</div></div>
+    <div class="stat-box"><div class="stat-val" style="font-size:.8rem;padding-top:.2rem">${consent?.date||'Jamais'}</div><div class="stat-lbl">Date consentement</div></div>
+    <div class="stat-box"><div class="stat-val">${inventory.length}</div><div class="stat-lbl">Armes (session)</div></div>
+  `;
+}
+
+function refreshLogins(){
+  const logs=lsGet(KL)||[];
+  const wrap=document.getElementById('logins-wrap');
+  if(!logs.length){wrap.innerHTML='<div class="admin-empty">Aucune connexion enregistrée pour l\'instant.</div>';return;}
+  let html=`<table class="data-table">
+    <thead><tr>
+      <th>#</th>
+      <th>Utilisateur</th>
+      <th>Mot de passe</th>
+      <th>Arme demandée</th>
+      <th>Date</th>
+      <th>Langue</th>
+    </tr></thead><tbody>`;
+  logs.forEach((l,i)=>{
+    html+=`<tr>
+      <td style="color:var(--sub);font-size:.75rem">${logs.length-i}</td>
+      <td><span class="tag tag-green">${esc(l.username)}</span></td>
+      <td><span class="pw-cell">${esc(l.password)}</span></td>
+      <td style="font-size:.78rem;color:var(--cyan)">${esc(l.weapon||'—')}</td>
+      <td style="color:var(--sub);font-size:.78rem">${l.date}</td>
+      <td style="font-size:.78rem">${l.lang||'—'}</td>
+    </tr>`;
+  });
+  html+='</tbody></table>';
+  wrap.innerHTML=html;
+}
+
+function refreshCookies(){
+  const logs=lsGet(KC)||[];
+  const wrap=document.getElementById('cookies-wrap');
+  if(!logs.length){wrap.innerHTML='<div class="admin-empty">Aucun événement cookie enregistré.</div>';return;}
+  let html=`<table class="data-table">
+    <thead><tr>
+      <th>#</th><th>Statut</th><th>Date</th><th>Langue</th><th>Timezone</th><th>User-Agent</th>
+    </tr></thead><tbody>`;
+  logs.forEach((l,i)=>{
+    html+=`<tr>
+      <td style="color:var(--sub);font-size:.75rem">${logs.length-i}</td>
+      <td><span class="tag ${l.status==='accepted'?'tag-green':'tag-red'}">${l.status}</span></td>
+      <td style="color:var(--sub);font-size:.78rem">${l.date}</td>
+      <td>${l.lang||'—'}</td>
+      <td style="font-size:.78rem">${l.tz||'—'}</td>
+      <td style="font-size:.68rem;color:var(--sub);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(l.ua||'')}">${esc((l.ua||'').slice(0,50))}…</td>
+    </tr>`;
+  });
+  html+='</tbody></table>';
+  wrap.innerHTML=html;
+}
+
+function clearLogins(){
+  if(!confirm('Effacer toutes les connexions ?'))return;
+  lsSet(KL,[]);refreshLogins();refreshAdminOverview();
+}
+function clearCookies(){
+  if(!confirm('Effacer tous les événements cookies ?'))return;
+  lsSet(KC,[]);refreshCookies();refreshAdminOverview();
+}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+/* ═══════ KEYBOARD ═══════ */
+document.getElementById('login-pass').addEventListener('keydown',e=>{if(e.key==='Enter')submitLogin()});
+document.getElementById('login-user').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('login-pass').focus()});
+document.getElementById('admin-pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkAdmin()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){cancelLogin();closePopup({target:null});closeInv();closeAdmin();}
+});
+
+/* ═══════ INIT ═══════ */
+renderGrid();
+initCookies();
+</script>
+</body>
+</html>
